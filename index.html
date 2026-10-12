@@ -13,18 +13,18 @@
    <header class="site-header">
       <div class="planet-header">
         <a href="#" class="planet-logo">
-          <img src="image/logo_black.svg" alt="the planet logo">
+          <img id="header-logo" src="image/logo_black.svg" alt="the planet logo">
         </a>
 
         <button
           type="button"
           id="dark-mode"
           aria-label="Switch to dark mode">
-          <img src="image/Theme Toggle.svg" alt="">
+          <img id="theme-icon" src="image/Theme Toggle.svg" alt="">
         </button>
       </div>
 
-      <section class="navigation-section">
+      <div class="navigation-section">
         <form class="search-container">
           <div class="search-input-wrapper">
             <svg viewBox="0 0 25 24">
@@ -39,12 +39,23 @@
             id="planet-search"
             placeholder="Search planet name">
           </div>
+          <span id="search-error" class="search-error" hidden>No results</span>
           <button type="submit" id="searchButton">Search</button>
         </form>
-      </section>
+        <p id="search-status" class="visually-hidden" role="status" aria-live="polite"></p>
+      </div>
    </header>
    
    <main>
+    <section id="no-results" class="no-results" aria-live="polite" hidden>
+      <h2>No results found!</h2>
+      <p>
+        We couldn’t find any planet matching your search.
+        Please double-check the name and try again.
+      </p>
+    </section>
+
+
     <section class="planet-hero">
       <div class="planet-container">
         <!-- left hand side -->
@@ -54,8 +65,10 @@
 
         <!-- right hand side -->
         <div class="hero-right-side">
-          <h1 id="planet-name">Earth</h1>
-          <span id="planet-type">Terrestrial</span>
+          <div class="planet-heading">
+            <h1 id="planet-name">Earth</h1>
+            <span id="planet-type">Terrestrial</span>
+          </div>
           <p id="planet-description">The only known planet to support life, with liquid water on its surface.</p>
 
           <div class="planet-stats">
@@ -121,7 +134,7 @@
        
         <thead>
           <tr class="table-head">
-            <th colspan="2"></th>
+            <th colspan="2" class="in"></th>
             <th scope="col">Name</th>
             <th scope="col" class="mass-column">Mass (10 24kg)</th>
             <th scope="col">Diameter (km)</th>
@@ -130,7 +143,7 @@
 
         <tbody>
           <tr>
-            <th scope="rowgroup" rowspan="4" colspan="2" class="category terrestrial"> Terrestrial Planets</th>
+            <th scope="rowgroup" rowspan="4" colspan="2" class="category in terrestrial"> Terrestrial Planets</th>
             <th scope="row" class="the-planet">Mercury</th>
             <td class="mass-column">0.330</td>
             <td>4,878</td>
@@ -155,7 +168,7 @@
           </tr>
 
           <tr>
-            <th scope="rowgroup" rowspan="4" class="category jovian">Jovian Planets</th>
+            <th scope="rowgroup" rowspan="4" class="category in jovian">Jovian Planets</th>
             <th scope="rowgroup" rowspan="2" class="category gas">Gas Giants</th>
             <th scope="row" class="the-planet">Jupiter</th>
             <td class="mass-column">0.330</td>
@@ -182,7 +195,7 @@
           </tr>
 
           <tr>
-            <th scope="row" colspan="2" class="category dwarf">Dwarf Planets</th>
+            <th scope="row" colspan="2" class="category in dwarf">Dwarf Planets</th>
             <th scope="row" class="the-planet">Pluto</th>
             <td class="mass-column">0.330</td>
             <td>4,878</td>

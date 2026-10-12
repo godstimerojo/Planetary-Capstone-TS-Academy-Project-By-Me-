@@ -144,20 +144,29 @@ header{
 }
 
 :root{
-  --white: #F6F8FF;
-  --white2: #FFFFFF;
-  --black: #2B3442;
-  --black2: #212121;
-  --black3: #0F2A44;
+  --bg-color: #F6F8FF;
+  --hero-search-bg: #FFFFFF;
+  --planet-name-stat-figure: #2B3442;
+  --tb-cell-color: #212121;
+  --table-section-p: #0F2A44;
+  --table-caption: #0F2A44;
+  --thead-color: #FFFFFF;
+  --thead-bg: #164BAF;
   --blue:#0079FF;
-  --grey: #4B6A9B;
-  --blue2: #164BAF;
-  --lightblue: #D1E3FF;
+  --planet-description: #4B6A9B;
+  --placeholder-gmp-metrics: #4B6A9B;
+  --table-section-h2: #164BAF;
+  --tb-row-group-bg: #D1E3FF;
   --footerblue: #4B6A9B;
+  --table-cell-bg: #F2F7FF;
+  --tb-border-color: #FFFFFF;
+  --search-btn-text: #FFFFFF;
+  --input-color: #212121;
+  --no-result: #F74646;
 }
 
 body{
-  background-color: var(--white);
+  background-color: var(--bg-color);
 }
 
 .planet-header{
@@ -183,7 +192,7 @@ body{
 }
 
 #dark-mode:hover {
-  background-color: var(--white2);
+  background-color: var(--hero-search-bg);
   border-radius: 5px;
 }
 
@@ -227,6 +236,37 @@ body{
 }
 
 
+.search-error {
+  color: var(--no-result);
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.no-results {
+  margin-top: 40px;
+  padding: 48px;
+  border-radius: 15px;
+  background-color: var(--hero-search-bg);
+  box-shadow: 0 16px 30px -10px #4660BB33;
+  text-align: center;
+}
+
+.no-results h2 {
+  color: var(--planet-name-stat-figure);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.no-results p {
+  margin-top: 16px;
+  color: var(--planet-description);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
 #searchButton:hover {
   background-color: #99c6eb;
 }
@@ -247,7 +287,7 @@ body{
   display: flex;
   align-items: center;
 
-  background-color: var(--white2);
+  background-color: var(--hero-search-bg);
   box-shadow: 0 16px 30px -10px #4660BB33;
   border-radius: 16px;
 }
@@ -268,14 +308,13 @@ body{
     width: 100%;
     border: none;
     outline: none;
-
-    
-    color: var(--grey);
+    background-color: transparent;
+    color: var(--input-color);
   }
 }
 
 .search-input-wrapper input::placeholder{
-  color: var(--grey);
+  color: var(--placeholder-gmp-metrics);
   font-size: 18px;
   font-weight: 400;
   line-height: 140%;
@@ -287,7 +326,7 @@ body{
   border: none;
   border-radius: 10px;
   background-color: var(--blue);
-  color: var(--white2);
+  color: var(--search-btn-text);
   font-size: 16px;
   font-weight: 700;
   line-height: 150%;
@@ -296,7 +335,7 @@ body{
 
 .planet-container{
   margin-top: 40px;
-  background-color: var(--white2);
+  background-color: var(--hero-search-bg);
   box-shadow: 0 16px 30px -10px #4660BB33;
   border: none;
   border-radius: 15px;
@@ -320,7 +359,7 @@ body{
   flex: 4;
 
   h1{
-    color: var(--black);
+    color: var(--planet-name-stat-figure);
     font-size: 26px;
     font-weight: 700;
     line-height: 120%;
@@ -334,7 +373,7 @@ body{
 }
 
 #planet-description{
-  color: var(--grey);
+  color: var(--planet-description);
   font-size: 15px;
   font-weight: 400;
   line-height: 150%;
@@ -343,7 +382,7 @@ body{
 }
 
 .planet-stats{
-  background-color: var(--white);
+  background-color: var(--bg-color);
   border-radius: 10px;
   padding: 15px 32px;
   margin-top: 24px;
@@ -355,14 +394,14 @@ body{
     flex-direction: column;
 
     .stat-label{
-      color: var(--grey);
+      color: var(--placeholder-gmp-metrics);
       font-size: 13px;
       font-weight: 400;
       line-height: 150%;
     }
 
     .stat-value{
-      color: var(--black);
+      color: var(--planet-name-stat-figure);
       font-size: 22px;
       font-weight: 700;
       line-height: 140%;
@@ -381,7 +420,7 @@ body{
     column-gap: 16px;
 
     .metric-value{
-      color: var(--grey);
+      color: var(--placeholder-gmp-metrics);
       font-size: 15px;
       font-weight: 400;
       line-height: 150%;
@@ -396,7 +435,7 @@ body{
   h2{
     font-size: 32px;
     font-weight: 600;
-    color: var(--blue2);
+    color: var(--table-section-h2);
     line-height: 150%;
   }
 
@@ -405,7 +444,7 @@ body{
     font-size: 18px;
     font-weight: 400;
     line-height: 150%;
-    color: var(--black3);
+    color: var(--table-section-p);
   }
 }
 
@@ -421,7 +460,7 @@ body{
     text-align: left;
     caption-side: top;
     padding-bottom: 24px;
-    color: var(--black3);
+    color: var(--table-caption);
     font-size: 18px;
     font-weight: 600;
     line-height: 150%;
@@ -439,10 +478,10 @@ body{
 
 
 .table-head {
-  color: var(--white2);
+  color: var(--thead-color);
   font-weight: 700;
   line-height: 150%;
-  border: 2px solid var(--white2);
+  border: 2px solid var(--tb-border-color);
 
 
   th,td{
@@ -452,23 +491,24 @@ body{
 }
 
 .data-table thead th {
-  background-color: var(--blue2);
+  background-color: var(--thead-bg);
 }
 
 th,td{
-  background-color: var(--table-cell);
+  background-color: var(--table-cell-bg);
 }
 
 /* Table cells */
 .data-table th,
 .data-table td {
-  border-right: 2px solid var(--white2);
-  border-bottom: 2px solid var(--white2);
+  border-right: 2px solid var(--tb-border-color);
+  border-bottom: 2px solid var(--tb-border-color);
+  /* border-left: 2px solid var(--tb-border-color); */
 }
 
 /* Left and top borders */
 .data-table tr:first-child th {
-  border-top: 2px solid var(--white2);
+  border-top: 2px solid var(--tb-border-color);
 }
 
 .data-table th:first-child,
@@ -494,10 +534,15 @@ th,td{
 }
 
 .category{
-  background-color: var(--lightblue);
+  background-color: var(--tb-row-group-bg);
   font-weight: 700;
   line-height: 150%;
-  color: var(--black2);
+  color: var(--tb-cell-color);
+}
+
+.in{
+  border-left: 2px solid var(--tb-border-color);
+
 }
 
 .terrestrial{
@@ -519,27 +564,45 @@ th,td{
 
 .the-planet{
   font-weight: 500;
-  color: var(--black2);
+  color: var(--tb-cell-color);
   line-height: 150%;
 }
 
 .data-table tbody tr td:last-child{
-  border-left: 2px solid var(--white2);
+  border-left: 2px solid var(--tb-border-color);
+}
+
+/* Light mode */
+.metric-icon {
+  color: #111827;
+}
+
+/* Dark mode */
+body.dark-theme .metric-icon {
+  color: #ffffff;
 }
 
 
-
-
 body.dark-theme {
-  --white: #0F172A;
-  --white2: #1E293B;
-  --black: #F8FAFC;
-  --black2: #E2E8F0;
-  --black3: #CBD5E1;
-  --grey: #94A3B8;
-  --lightblue: #334155;
-  --footerblue: #94A3B8;
-  --table-cell: #26364D;
+  --bg-color: #141D2F;
+  --hero-search-bg: #1E2A47;
+  --planet-name-stat-figure: #FFFFFF;
+  --tb-cell-color: #212121;
+  --table-section-p: #90A4D4;
+  --table-caption: #D1E3FF;
+  --thead-color: #D1E3FF;
+  --thead-bg: #141D2F;
+  --blue:#0079FF;
+  --planet-description: #4B6A9B;
+  --placeholder-gmp-metrics: #FFFFFF;
+  --table-section-h2: #FFFFFF;
+  --tb-row-group-bg: #90A4D4;
+  --footerblue: #4B6A9B;
+  --table-cell-bg: #F2F7FF;
+  --tb-border-color: #FFFFFF;
+  --input-color: #FFFFFF;
+  --no-result: #F74646;
+
 }
 
 
@@ -690,8 +753,35 @@ body.dark-theme {
     font-size: 16px;
   }
 
+  .no-results {
+    padding: 20px 20px;
+  }
+
+  .no-results h2 {
+    font-size: 22px;
+  }
+
+  .no-results p {
+    font-size: 14px;
+  }
+
   .table-head th,
   .terrestrial {
     width: auto;
+  }
+
+  .data-table caption {
+    font-size: 18px;
+  }
+
+  .data-table thead,
+  .data-table tbody {
+    font-size: 10px;
+  }
+
+  .data-table th,
+  .data-table td {
+    overflow-wrap: anywhere;
+    padding: 5px 2px;
   }
 }
