@@ -681,12 +681,57 @@ body.dark-theme {
 
   
   .data-table {
+    width: 100%;
     max-width: 100%;
     min-width: 0;
-    width: 100%;
+    height: 407.24px;
+    font-size: 10px;
     table-layout: fixed;
-    font-size: 12px;
   }
+
+  .data-table col:nth-child(1) {
+    width: 20.55%;
+  }
+
+  .data-table col:nth-child(2) {
+    width: 19.07%;
+  }
+
+  .data-table col:nth-child(3) {
+    width: 27.27%;
+  }
+
+  .data-table col:nth-child(5) {
+    width: 33.11%;
+  }
+
+  .data-table thead tr {
+    height: 45.19px;
+  }
+
+  .table-head th {
+    height: 45.19px;
+  }
+
+  .data-table tbody tr:nth-child(-n + 3) {
+    height: 40.95px;
+  }
+
+  .data-table tbody tr:nth-child(4),
+  .data-table tbody tr:nth-child(9) {
+    height: 39px;
+  }
+
+  .data-table tbody tr:nth-child(5),
+  .data-table tbody tr:nth-child(6),
+  .data-table tbody tr:nth-child(7) {
+    height: 40.4px;
+  }
+
+  .data-table tbody tr:nth-child(8) {
+    height: 40px;
+  } 
+
 
   .data-table th,
   .data-table td {
@@ -768,6 +813,33 @@ body.dark-theme {
   .table-head th,
   .terrestrial {
     width: auto;
+  }
+
+  .terrestrial {
+    height: 161.85px;
+  }
+
+  .jovian {
+    height: 161.2px;
+  }
+
+  .gas,
+  .ice {
+    height: 80.8px;
+  }
+
+  .dwarf {
+    height: 39px;
+  }
+
+  .neptune {
+    height: 40px;
+  }
+
+
+
+.table-wrapper {
+    overflow-x: visible;
   }
 
   .data-table caption {
