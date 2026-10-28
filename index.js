@@ -1,7 +1,5 @@
-// The address of the planet data
 const apiAddress = "https://anurella.github.io/json/planet.json";
 
-// Get the parts of the page that JavaScript needs to change
 const searchForm = document.querySelector(".search-container");
 const searchInput = document.getElementById("planet-search");
 const searchStatus = document.getElementById("search-status");
@@ -14,7 +12,6 @@ const planetSection = document.querySelector(".planet-hero");
 
 let planets = [];
 
-// Change between light mode and dark mode when the button is clicked
 darkModeButton.addEventListener("click", function () {
   const isDark = document.body.classList.toggle("dark-theme");
 
@@ -29,7 +26,6 @@ darkModeButton.addEventListener("click", function () {
   }
 });
 
-// Show one planet's information on the page
 function showPlanet(planet) {
   noResultsMessage.hidden = true;
   planetSection.hidden = false;
@@ -51,7 +47,7 @@ function showPlanet(planet) {
   planetImage.alt = "Image of " + planet.name;
 }
 
-// Get the planet information from the API when the page opens
+//planet information from the API when the page opens
 fetch(apiAddress)
   .then(response => {
     return response.json();
@@ -73,7 +69,7 @@ fetch(apiAddress)
     searchStatus.textContent = "Planet information could not be loaded.";
   });
 
-  // Find and show the planet entered in the search box
+  //show the planet entered in the search box
 searchForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
