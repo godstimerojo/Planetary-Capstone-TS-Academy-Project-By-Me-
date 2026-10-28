@@ -587,6 +587,7 @@ footer {
   font-size: 10px;
   color: var(--footer-text);
   margin-bottom: 18px;
+  margin-top: 10px;
 }
 
 .footer-wrapper {
